@@ -33,3 +33,4 @@ Result: The customer significantly reduced their costs without workflow disrupti
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 OWNERSHIP 
 
+Tell me about the tough decision you made during a project or descirbe a tough situations where you have to step into a leadership role.
