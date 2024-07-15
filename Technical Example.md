@@ -92,3 +92,53 @@ Result
     Increased Customer Satisfaction: Enhanced performance and reliability led to higher customer satisfaction and fewer support tickets.
 
 By taking ownership of the issue and implementing targeted solutions with Karpenter, I ensured our EKS-based application could reliably handle peak traffic, improving performance and customer satisfaction.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Invent and simplify 
+
+Situation:
+A new CloudFormation stack needed to be created for a backend EC2 instance that was not previously part of any stack.
+The stack required a new VPC, subnet, security group, and autoscaling group launching an EC2 instance based on the original instance's AMI.
+After deploying the CDK app, all requests to the new instance's endpoints failed with the error: connect ECONNREFUSED.
+
+Task:
+Troubleshoot and resolve the connection issue with the new EC2 instance to ensure it operates correctly.
+
+Action:
+Security Group Rules:
+
+Verified inbound HTTP traffic on port 80 was allowed.
+Confirmed outbound rules were correct.
+
+Subnet and Internet Gateway:
+
+Ensured the subnet had a route to an internet gateway.
+Verified connectivity by pinging a sample URL from the EC2 instance.
+
+Region and VPC Configuration:
+
+Noted that the new EC2 instance was in a different region than the source EC2 and RDS instances.
+Allowed all inbound traffic on the RDS instance temporarily for testing.
+
+VPC Peering Setup:
+
+Established VPC peering between the new and original VPCs.
+Updated route tables to enable proper traffic routing between VPCs.
+
+Application Configuration and Dependencies:
+
+Checked application logs on the new EC2 instance for errors.
+Ensured all dependencies and configurations from the original instance were replicated correctly.
+
+Result:
+Successful Communication: VPC peering and route table updates resolved the ECONNREFUSED error, enabling communication between the new EC2 instance and the RDS instance.
+Operational Endpoints: The new EC2 instance's endpoints became accessible, serving requests correctly.
+Scalable and Reliable Setup: The new stack improved the reliability and scalability of the backend infrastructure.
+
+Using the AWS Leadership Principle: Invent and Simplify:
+Streamlined the replication process of the backend infrastructure using CDK.
+Simplified architecture with VPC peering and proper network route configurations, ensuring seamless communication and providing a scalable and efficient solution for future deployments.
+
