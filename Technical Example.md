@@ -142,3 +142,44 @@ Using the AWS Leadership Principle: Invent and Simplify:
 Streamlined the replication process of the backend infrastructure using CDK.
 Simplified architecture with VPC peering and proper network route configurations, ensuring seamless communication and providing a scalable and efficient solution for future deployments.
 
+-----------------------------------------
+
+Situation: A company needed to manage and serve a large volume of static assets (like images, videos, and documents) for its web application. These assets were initially stored on a traditional on-premises server, which was costly to maintain and scale. The manual management of these assets was time-consuming, and the performance for end-users was inconsistent.
+
+Task: As the DevOps engineer, the task was to find a more efficient, scalable, and cost-effective solution for storing and serving static assets. The solution needed to simplify the current setup, reduce costs, and improve performance.
+
+Action:
+
+    Identify the Requirements:
+
+    Analyzed the storage needs, access patterns, and performance requirements.
+    Considered factors like durability, availability, and security.
+
+2. Leverage AWS S3:
+
+    Proposed the use of Amazon S3 for storing static assets due to its scalability, durability (99.999999999%), and cost-effectiveness.
+    Created an S3 bucket to store all static assets.
+    Configured bucket policies and IAM roles to manage access and ensure security.
+
+3. Simplify Asset Management:
+
+    Automated the upload process using AWS SDKs and CLI to ensure assets were automatically uploaded to the S3 bucket.
+    Implemented lifecycle policies to transition older assets to infrequent access or archive storage classes to save costs.
+
+4. Enhance Performance with CloudFront:
+
+    Set up Amazon CloudFront as a content delivery network (CDN) to cache and serve the static assets from edge locations around the world, reducing latency and improving user experience.
+    Configured CloudFront distribution to use the S3 bucket as the origin.
+
+5 . Monitor and Optimize:
+
+    Enabled logging and monitoring to track access patterns and performance.
+    Used S3 analytics to gain insights into storage usage and optimize costs further.
+
+Result:
+
+    Cost Savings: The transition to S3 significantly reduced storage costs compared to on-premises servers.
+    Improved Performance: Users experienced faster load times due to CloudFront’s global edge locations.
+    Simplified Management: Automating asset uploads and implementing lifecycle policies reduced the manual effort required for asset management.
+    Scalability and Reliability: The solution provided a highly scalable and reliable storage solution, capable of handling future growth without additional operational overhead.
+
